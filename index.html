@@ -1,0 +1,187 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+    	.chart {
+    		width: 100%;
+    	}
+    </style>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      
+      function drawChart() {
+      
+      selection = document.getElementById("thedropdown").value;
+     
+     
+     info = [ 
+{ "measure": "apple", "natamer": 268, "asian": 15038, "black": 7067, "latinx": 9471, "nathawa": 362, "white": 41380, "twoormore": 1658,}, 
+{ "measure": "intel", "natamer": 306, "asian": 19448, "black": 2108, "latinx": 4362, "nathawa": 299, "white": 26921, "twoormore": 691,}, 
+{ "measure": "hpe", "natamer": 206, "asian": 6634, "black": 3734, "latinx": 2987, "nathawa": 80, "white": 37771, "twoormore": 577,}, 
+{ "measure": "google", "natamer": 53, "asian": 15684, "black": 1100, "latinx": 2410, "nathawa": 98, "white": 26587, "twoormore": 864,}, 
+{ "measure": "cisco", "natamer": 92, "asian": 13491, "black": 1283, "latinx": 1913, "nathawa": 55, "white": 20344, "twoormore": 348,}, 
+{ "measure": "salesforce", "natamer": 17, "asian": 3577, "black": 345, "latinx": 581, "nathawa": 55, "white": 9795, "twoormore": 346,}, 
+{ "measure": "hpinc", "natamer": 63, "asian": 1671, "black": 519, "latinx": 1087, "nathawa": 21, "white": 10066, "twoormore": 186,}, 
+{ "measure": "facebook", "natamer": 18, "asian": 4307, "black": 259, "latinx": 503, "nathawa": 32, "white": 5819, "twoormore": 303,}
+
+];
+
+     
+     
+     for(i=0; i<info.length; i++) {
+        
+        if(selection==info[i].measure) {
+          z1=info[i].natamer;
+          z2=info[i].asian;
+          z3=info[i].black;
+          z4=info[i].latinx;
+          z5=info[i].nathawa;
+          z6=info[i].white;
+          z7=info[i].twoormore;
+        }
+      
+
+        
+                //create the if statement to read the json and have it put the appropriate cities data in the chart based on the dropdown
+         
+         
+
+      } // end for
+    
+        var data = google.visualization.arrayToDataTable([
+          ['Element', 'Amount'],
+          ['Native American or Alaskan Native', z1],
+          ['Asian', z2],
+          ['Black or African American', z3],
+          ['Latinx or Hispanic', z4],
+          ['Native Hawaiian or Pacific Islander', z5],
+          ['White', z6],
+          ['Two or more races', z7]
+        ]);
+
+        var options = {
+          title: 'Diversity in Silicon Valley Companies',
+          legend: { position: 'bottom' }
+        };
+        
+ 
+        //find the appropriate visualization code to draw a line chart and place it in the div below called line_chart
+
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+     <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart2);
+      
+      
+      function drawChart2() {
+      
+      selection = document.getElementById("thedropdown2").value;
+     
+     
+    info = [ 
+{ "measure": "apple", "natamer": 268, "asian": 15038, "black": 7067, "latinx": 9471, "nathawa": 362, "white": 41380, "twoormore": 1658,}, 
+{ "measure": "intel", "natamer": 306, "asian": 19448, "black": 2108, "latinx": 4362, "nathawa": 299, "white": 26921, "twoormore": 691,}, 
+{ "measure": "hpe", "natamer": 206, "asian": 6634, "black": 3734, "latinx": 2987, "nathawa": 80, "white": 37771, "twoormore": 577,}, 
+{ "measure": "google", "natamer": 53, "asian": 15684, "black": 1100, "latinx": 2410, "nathawa": 98, "white": 26587, "twoormore": 864,}, 
+{ "measure": "cisco", "natamer": 92, "asian": 13491, "black": 1283, "latinx": 1913, "nathawa": 55, "white": 20344, "twoormore": 348,}, 
+{ "measure": "salesforce", "natamer": 17, "asian": 3577, "black": 345, "latinx": 581, "nathawa": 55, "white": 9795, "twoormore": 346,}, 
+{ "measure": "hpinc", "natamer": 63, "asian": 1671, "black": 519, "latinx": 1087, "nathawa": 21, "white": 10066, "twoormore": 186,}, 
+{ "measure": "facebook", "natamer": 18, "asian": 4307, "black": 259, "latinx": 503, "nathawa": 32, "white": 5819, "twoormore": 303,} 
+    ];
+
+     
+     
+     for(i=0; i<info.length; i++) { 
+        
+        
+                //create the if statement to read the json and have it put the appropriate cities data in the chart based on the dropdown
+
+
+       if(selection==info[i].measure) {
+          z1=info[i].natamer;
+          z2=info[i].asian;
+          z3=info[i].black;
+          z4=info[i].latinx;
+          z5=info[i].nathawa;
+          z6=info[i].white;
+          z7=info[i].twoormore;
+        }
+
+
+    } // end for
+    
+        var data = google.visualization.arrayToDataTable([
+          ['Element', 'Amount'],
+          ['Native American or Alaskan Native', z1],
+          ['Asian', z2],
+          ['Black or African American', z3],
+          ['Latinx or Hispanic', z4],
+          ['Native Hawaiian or Pacific Islander', z5],
+          ['White', z6],
+          ['Two or more races', z7]
+        ]);
+
+        var options = {
+          title: 'Diversity in Silicon Valley Companies',
+          'width':700,
+          'height': 600,
+          
+          legend: { position: 'bottom' }
+        };
+        
+        var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+ 
+        //find the appropriate visualization code to draw a line chart and place it in the div below called bar_chart
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+  </head>
+  <body>
+  <form id="form1" onchange="drawChart()" >
+     
+     <select id="thedropdown">
+     <option value="apple">Apple</option>
+     <option value="intel">Intel</option>
+     <option value="hpe">HPE</option>
+     <option value="google">Google</option>
+     <option value="cisco">Cisco</option>
+     <option value="salesforce">Salesforce</option>
+     <option value="hpinc">HP Inc.</option>
+     <option value="facebook">Facebook</option>
+     </select>
+    
+  </form>
+  <div class="chart">
+    <div id="bar_chart"></div>
+  </div>
+
+    <form id="form2" onchange="drawChart2()" >
+     
+     <select id="thedropdown2">
+     <option value="apple">Apple</option>
+     <option value="intel">Intel</option>
+     <option value="hpe">HPE</option>
+     <option value="google">Google</option>
+     <option value="cisco">Cisco</option>
+     <option value="salesforce">Salesforce</option>
+     <option value="hpinc">HP Inc.</option>
+     <option value="facebook">Facebook</option>
+     </select>
+    
+  </form>
+  <div class="chart">
+    <div id="pie_chart"></div>
+  </div>
+  </body>
+</html>
+
